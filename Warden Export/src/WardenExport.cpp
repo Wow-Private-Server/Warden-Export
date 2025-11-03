@@ -551,6 +551,6 @@ bool WardenExport::Hook()
 {
     auto openFrameHook = MemoryOperator::CreateDetour("LoadWardenModule", (uintptr_t)&Original_LoadWardenModule, (uintptr_t)LoadWardenModulePudo, false);
 
-    openFrameHook->Apply();
+    return openFrameHook && openFrameHook->Apply();
     
 }
